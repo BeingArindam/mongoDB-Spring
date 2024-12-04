@@ -3,6 +3,8 @@ package com.example.mongodb.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.example.mongodb.entity.Student;
@@ -30,4 +32,8 @@ public class StudentService {
 		return studentRepository.findByNameAndEmail(name, email);
 	}
 	
+	public List<Student> getAllWithPagination(int pageNo, int pageSize){
+		Pageable pageable = PageRequest.of(pageNo, pageSize);
+		return studentRepository.findAll(pageable).getContent();
+	}
 }

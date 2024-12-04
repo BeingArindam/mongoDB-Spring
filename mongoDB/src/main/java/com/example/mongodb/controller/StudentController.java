@@ -40,4 +40,9 @@ public class StudentController {
 	public List<Student> getStudentsByNameAndEmail(@RequestParam String name, @RequestParam String email){
 		return studentService.getStudentsByNameAndEmail(name, email);
 	}
+	
+	@GetMapping("/allWithPagination")
+	public List<Student> getStudentsByNameAndEmail(@RequestParam int pageNo, @RequestParam int pageSize){
+		return studentService.getAllWithPagination(pageNo, pageSize);
+	}
 }
