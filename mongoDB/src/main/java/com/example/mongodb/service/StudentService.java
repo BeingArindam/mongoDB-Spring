@@ -46,4 +46,8 @@ public class StudentService {
 	public List<Student> getStudentsByDepartment(String departmentName) {
 		return studentRepository.findByDepartmentDepartmentName(departmentName);
 	}
+
+	public List<Student> emailLike(String email) {
+		return studentRepository.findByEmailIsLike(email);
+	}
 }

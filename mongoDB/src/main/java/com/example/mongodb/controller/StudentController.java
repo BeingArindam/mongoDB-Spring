@@ -55,4 +55,10 @@ public class StudentController {
 	public List<Student> getStudentsByDepartment(@PathVariable String departmentName){
 		return studentService.getStudentsByDepartment(departmentName);
 	}
+	
+	@GetMapping("/studentsEmailLike")
+	public List<Student> emailLike(@RequestParam String email){
+		return studentService.emailLike(email);
+	}
+	
 }
