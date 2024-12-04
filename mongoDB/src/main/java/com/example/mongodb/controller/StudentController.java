@@ -45,4 +45,9 @@ public class StudentController {
 	public List<Student> getStudentsByNameAndEmail(@RequestParam int pageNo, @RequestParam int pageSize){
 		return studentService.getAllWithPagination(pageNo, pageSize);
 	}
+	
+	@GetMapping("/allWithSort")
+	public List<Student> getStudentsWithSort(){
+		return studentService.getAllWithSort();
+	}
 }
