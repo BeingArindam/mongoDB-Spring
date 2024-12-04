@@ -26,7 +26,8 @@ public class StudentService {
 	}
 
 	public List<Student> getStudentsByName(String name) {
-		return studentRepository.findByName(name);
+		//return studentRepository.findByName(name);
+		return studentRepository.getByName(name);
 	}
 
 	public List<Student> getStudentsByNameAndEmail(String name, String email) {
