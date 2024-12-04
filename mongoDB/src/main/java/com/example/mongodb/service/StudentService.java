@@ -42,4 +42,8 @@ public class StudentService {
 		Sort sort = Sort.by(Sort.Direction.ASC, "name");
 		return studentRepository.findAll(sort);
 	}
+
+	public List<Student> getStudentsByDepartment(String departmentName) {
+		return studentRepository.findByDepartmentDepartmentName(departmentName);
+	}
 }

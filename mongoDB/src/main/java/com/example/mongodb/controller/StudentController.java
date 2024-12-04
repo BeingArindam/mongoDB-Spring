@@ -50,4 +50,9 @@ public class StudentController {
 	public List<Student> getStudentsWithSort(){
 		return studentService.getAllWithSort();
 	}
+	
+	@GetMapping("/studentsByDepartment/{departmentName}")
+	public List<Student> getStudentsByDepartment(@PathVariable String departmentName){
+		return studentService.getStudentsByDepartment(departmentName);
+	}
 }
